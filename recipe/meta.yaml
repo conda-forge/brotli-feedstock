@@ -1,3 +1,5 @@
+# The 0.5.x released libraries do not install the header files and libraries in
+# their CMake setup. We need to use brotli as a library
 {% set version = "0.6.pre" %}
 {% set commit = "5db62dcc9d386579609540cdf8869e95ad334bbd" %}
 
@@ -11,7 +13,7 @@ source:
   sha256: fcc70cacaf3833e22fad242c0e4f44ab0ae4e570ebdb954f985182f4ce1bff74
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
