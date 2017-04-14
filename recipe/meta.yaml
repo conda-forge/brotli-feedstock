@@ -13,17 +13,37 @@ source:
   sha256: fcc70cacaf3833e22fad242c0e4f44ab0ae4e570ebdb954f985182f4ce1bff74
 
 build:
-  number: 2
-  skip: true  # [win]
+  number: 3
+  skip: true  # [win and (py36 or py27)]
+
+  features:
+    - vc10  # [win and py34]
+    - vc14  # [win and py35]
 
 requirements:
   build:
     - toolchain
     - cmake
+    - python  # [win]
 
 test:
+  requires:
+    - python 3.4.*  # [win and py34]
+    - python 3.5.*  # [win and py35]
   commands:
     - test -f $PREFIX/include/brotli/encode.h  # [unix]
+    - if not exist %PREFIX%\\Library\\bin\\bro.exe exit 1                   # [win]
+    - if not exist %PREFIX%\\Library\\bin\\bro_static.exe exit 1            # [win]
+    - if not exist %PREFIX%\\Library\\bin\\brotlicommon.dll exit 1          # [win]
+    - if not exist %PREFIX%\\Library\\bin\\brotlidec.dll exit 1             # [win]
+    - if not exist %PREFIX%\\Library\\bin\\brotlienc.dll exit 1             # [win]
+    - if not exist %PREFIX%\\Library\\lib\\brotlicommon.lib exit 1          # [win]
+    - if not exist %PREFIX%\\Library\\lib\\brotlicommon_static.lib exit 1   # [win]
+    - if not exist %PREFIX%\\Library\\lib\\brotlidec.lib exit 1             # [win]
+    - if not exist %PREFIX%\\Library\\lib\\brotlidec_static.lib exit 1      # [win]
+    - if not exist %PREFIX%\\Library\\lib\\brotlienc.lib exit 1             # [win]
+    - if not exist %PREFIX%\\Library\\lib\\brotlienc_static.lib exit 1      # [win]
+    - if not exist %PREFIX%\\Library\\include\\brotli\\encode.h exit 1      # [win]
 
 about:
   home: http://github.com/google/brotli
