@@ -1,19 +1,18 @@
 # The 0.5.x released libraries do not install the header files and libraries in
 # their CMake setup. We need to use brotli as a library
-{% set version = "0.6.pre" %}
-{% set commit = "5db62dcc9d386579609540cdf8869e95ad334bbd" %}
+{% set version = "0.6.0" %}
 
 package:
   name: brotli
   version: {{ version }}
 
 source:
-  fn: {{ commit }}.tar.gz
-  url: https://github.com/google/brotli/archive/{{ commit }}.tar.gz
-  sha256: fcc70cacaf3833e22fad242c0e4f44ab0ae4e570ebdb954f985182f4ce1bff74
+  fn: v{{ version }}.tar.gz
+  url: https://github.com/google/brotli/archive/v{{ version }}.tar.gz
+  sha256: 69cdbdf5709051dd086a2f020f5abf9e32519eafe0ad6be820c667c3a9c9ee0f
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win and (py36 or py27)]
 
   features:
