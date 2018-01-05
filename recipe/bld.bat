@@ -7,12 +7,15 @@ cmake -G "NMake Makefiles" ^
       -DCMAKE_BUILD_TYPE:STRING=%CMAKE_CONFIG% ^
       -DBUILD_SHARED_LIBS:BOOL=ON ^
       "%SRC_DIR%"
+if errorlevel 1 exit 1
 nmake
+if errorlevel 1 exit 1
 ctest -V
+if errorlevel 1 exit 1
+cmake --build . --target install
+if errorlevel 1 exit 1
 
-move bro.exe "%LIBRARY_BIN%\"
-move *.dll "%LIBRARY_BIN%\"
-move *.lib "%LIBRARY_LIB%\"
+move brotli.exe "%LIBRARY_BIN%\brotli-tmp.exe"
 
 popd
 
@@ -24,13 +27,15 @@ cmake -G "NMake Makefiles" ^
       -DBUILD_SHARED_LIBS:BOOL=OFF ^
       -DCMAKE_RELEASE_POSTFIX="_static" ^
       "%SRC_DIR%"
-
+if errorlevel 1 exit 1
 nmake
+if errorlevel 1 exit 1
 ctest -V
+if errorlevel 1 exit 1
+cmake --build . --target install
+if errorlevel 1 exit 1
 
-move bro.exe "%LIBRARY_BIN%\bro_static.exe"
-move *.lib "%LIBRARY_LIB%\"
-mkdir "%LIBRARY_INC%\brotli"
-move "%SRC_DIR%\include\brotli\*" "%LIBRARY_INC%\brotli\"
+move "%LIBRARY_BIN%\brotli.exe" "%LIBRARY_BIN%\brotli_static.exe"
+move "%LIBRARY_BIN%\brotli-tmp.exe" "%LIBRARY_BIN%\brotli.exe"
 
 popd

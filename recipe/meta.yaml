@@ -1,6 +1,6 @@
 # The 0.5.x released libraries do not install the header files and libraries in
 # their CMake setup. We need to use brotli as a library
-{% set version = "0.6.0" %}
+{% set version = "1.0.2" %}
 
 package:
   name: brotli
@@ -9,10 +9,10 @@ package:
 source:
   fn: brotli-{{ version }}.tar.gz
   url: https://github.com/google/brotli/archive/v{{ version }}.tar.gz
-  sha256: 69cdbdf5709051dd086a2f020f5abf9e32519eafe0ad6be820c667c3a9c9ee0f
+  sha256: c2cf2a16646b44771a4109bb21218c8e2d952babb827796eb8a800c1f94b7422
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and (py36 or py27)]
 
   features:
@@ -30,19 +30,21 @@ test:
     - python 3.4.*  # [win and py34]
     - python 3.5.*  # [win and py35]
   commands:
+    - brotli --help
+    - brotli_static --help  # [win]
     - test -f $PREFIX/include/brotli/encode.h  # [unix]
-    - if not exist %PREFIX%\\Library\\bin\\bro.exe exit 1                   # [win]
-    - if not exist %PREFIX%\\Library\\bin\\bro_static.exe exit 1            # [win]
-    - if not exist %PREFIX%\\Library\\bin\\brotlicommon.dll exit 1          # [win]
-    - if not exist %PREFIX%\\Library\\bin\\brotlidec.dll exit 1             # [win]
-    - if not exist %PREFIX%\\Library\\bin\\brotlienc.dll exit 1             # [win]
-    - if not exist %PREFIX%\\Library\\lib\\brotlicommon.lib exit 1          # [win]
-    - if not exist %PREFIX%\\Library\\lib\\brotlicommon_static.lib exit 1   # [win]
-    - if not exist %PREFIX%\\Library\\lib\\brotlidec.lib exit 1             # [win]
-    - if not exist %PREFIX%\\Library\\lib\\brotlidec_static.lib exit 1      # [win]
-    - if not exist %PREFIX%\\Library\\lib\\brotlienc.lib exit 1             # [win]
-    - if not exist %PREFIX%\\Library\\lib\\brotlienc_static.lib exit 1      # [win]
-    - if not exist %PREFIX%\\Library\\include\\brotli\\encode.h exit 1      # [win]
+    - if not exist %LIBRARY_BIN%\\brotli.exe exit 1               # [win]
+    - if not exist %LIBRARY_BIN%\\brotli_static.exe exit 1        # [win]
+    - if not exist %LIBRARY_BIN%\\brotlicommon.dll exit 1         # [win]
+    - if not exist %LIBRARY_BIN%\\brotlidec.dll exit 1            # [win]
+    - if not exist %LIBRARY_BIN%\\brotlienc.dll exit 1            # [win]
+    - if not exist %LIBRARY_LIB%\\brotlicommon.lib exit 1         # [win]
+    - if not exist %LIBRARY_LIB%\\brotlicommon_static.lib exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\brotlidec.lib exit 1            # [win]
+    - if not exist %LIBRARY_LIB%\\brotlidec_static.lib exit 1     # [win]
+    - if not exist %LIBRARY_LIB%\\brotlienc.lib exit 1            # [win]
+    - if not exist %LIBRARY_LIB%\\brotlienc_static.lib exit 1     # [win]
+    - if not exist %LIBRARY_INC%\\brotli\\encode.h exit 1         # [win]
 
 about:
   home: http://github.com/google/brotli
