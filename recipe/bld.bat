@@ -4,6 +4,8 @@ mkdir build_shared_%CMAKE_CONFIG%
 pushd build_shared_%CMAKE_CONFIG%
 
 cmake -G "NMake Makefiles" ^
+      -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^
+      -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
       -DCMAKE_BUILD_TYPE:STRING=%CMAKE_CONFIG% ^
       -DBUILD_SHARED_LIBS:BOOL=ON ^
       "%SRC_DIR%"
@@ -15,7 +17,8 @@ if errorlevel 1 exit 1
 cmake --build . --target install
 if errorlevel 1 exit 1
 
-move brotli.exe "%LIBRARY_BIN%\brotli-tmp.exe"
+REM static install would overwrite this; we'll move back later
+move "%LIBRARY_BIN%\brotli.exe" "%LIBRARY_BIN%\brotli-tmp.exe"
 
 popd
 
@@ -23,6 +26,8 @@ mkdir build_static_%CMAKE_CONFIG%
 pushd build_static_%CMAKE_CONFIG%
 
 cmake -G "NMake Makefiles" ^
+      -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^
+      -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
       -DCMAKE_BUILD_TYPE:STRING=%CMAKE_CONFIG% ^
       -DBUILD_SHARED_LIBS:BOOL=OFF ^
       -DCMAKE_RELEASE_POSTFIX="_static" ^
