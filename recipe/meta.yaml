@@ -1,5 +1,3 @@
-# The 0.5.x released libraries do not install the header files and libraries in
-# their CMake setup. We need to use brotli as a library
 {% set version = "1.0.2" %}
 
 package:
