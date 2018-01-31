@@ -29,7 +29,13 @@ test:
     - python 3.5.*  # [win and py35]
   commands:
     - brotli --help
-    - test -f $PREFIX/include/brotli/encode.h  # [unix]
+    - test -f $PREFIX/lib/libbrotlienc$SHLIB_EXT     # [unix]
+    - test -f $PREFIX/lib/libbrotlienc-static.a      # [unix]
+    - test -f $PREFIX/lib/libbrotlidec$SHLIB_EXT     # [unix]
+    - test -f $PREFIX/lib/libbrotlidec-static.a      # [unix]
+    - test -f $PREFIX/lib/libbrotlicommon$SHLIB_EXT  # [unix]
+    - test -f $PREFIX/lib/libbrotlicommon-static.a   # [unix]
+    - test -f $PREFIX/include/brotli/encode.h        # [unix]
     - if not exist %LIBRARY_BIN%\\brotli.exe exit 1               # [win]
     - if not exist %LIBRARY_BIN%\\brotlicommon.dll exit 1         # [win]
     - if not exist %LIBRARY_BIN%\\brotlidec.dll exit 1            # [win]
