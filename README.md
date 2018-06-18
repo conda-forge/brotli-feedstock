@@ -14,14 +14,16 @@ Summary: Brotli compression format
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/brotli-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/brotli-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/brotli-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/brotli-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/brotli-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/brotli-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/brotli-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/brotli-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/brotli-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/brotli-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/brotli-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/brotli-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/brotli/badges/version.svg)](https://anaconda.org/conda-forge/brotli)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/brotli/badges/downloads.svg)](https://anaconda.org/conda-forge/brotli)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-brotli-green.svg)](https://anaconda.org/conda-forge/brotli) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/brotli.svg)](https://anaconda.org/conda-forge/brotli) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/brotli.svg)](https://anaconda.org/conda-forge/brotli) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/brotli.svg)](https://anaconda.org/conda-forge/brotli) |
 
 Installing brotli
 =================
