@@ -11,17 +11,15 @@ source:
 
 build:
   number: 0
-  skip: true  # [win and (py36 or py27)]
+  skip: true  # [win and (py36 or vc<14)]
 
-  features:
-    - vc10  # [win and py34]
-    - vc14  # [win and py35]
 
 requirements:
   build:
-    - toolchain
     - cmake
-    - python  # [win]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
 
 test:
   requires:
