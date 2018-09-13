@@ -10,7 +10,7 @@ source:
   sha256: 3d5bedd48edb909fe3b87cb99f7d139b987ef6f1616b7e22d74e928270a2fd20
 
 build:
-  number: 0
+  number: 1000
   skip: true  # [win and (py36 or vc<14)]
 
 
