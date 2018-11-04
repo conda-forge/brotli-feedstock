@@ -22,9 +22,6 @@ requirements:
   host:
 
 test:
-  requires:
-    - python 3.4.*  # [win and py34]
-    - python 3.5.*  # [win and py35]
   commands:
     - brotli --help
     - test -f $PREFIX/lib/libbrotlienc$SHLIB_EXT     # [unix]
