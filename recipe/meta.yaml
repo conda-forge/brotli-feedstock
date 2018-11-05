@@ -7,7 +7,7 @@ package:
 source:
   fn: brotli-{{ version }}.tar.gz
   url: https://github.com/google/brotli/archive/v{{ version }}.tar.gz
-  sha256: acc5865aa5fcb60e9ba539924c0c34dead34ca08d8795aa900510aa1d3621f7d
+  sha256: 4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c
 
 build:
   number: 1000
