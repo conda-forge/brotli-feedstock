@@ -10,7 +10,7 @@ source:
   sha256: 4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c
 
 build:
-  number: 1000
+  number: 1001
   skip: true  # [win and vc<14]
 
 
@@ -19,7 +19,7 @@ requirements:
     - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - make  # [unix]
+    - ninja
   host:
 
 test:
