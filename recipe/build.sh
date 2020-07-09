@@ -10,6 +10,7 @@ cmake -DCMAKE_INSTALL_PREFIX=$PREFIX \
       -DCMAKE_C_FLAGS=$BROTLI_CFLAGS \
       -GNinja \
       -DCMAKE_BUILD_TYPE=Release \
+      -DBUILD_STATIC_LIBS=OFF \
       .
 
 ninja
