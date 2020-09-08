@@ -5,7 +5,7 @@ set -e
 BROTLI_CFLAGS="-O3"
 
 # Build both static and shared libraries
-cmake -DCMAKE_INSTALL_PREFIX=$PREFIX \
+cmake ${CMAKE_ARGS} -DCMAKE_INSTALL_PREFIX=$PREFIX \
       -DCMAKE_INSTALL_LIBDIR=$PREFIX/lib \
       -DCMAKE_C_FLAGS=$BROTLI_CFLAGS \
       -GNinja \
@@ -14,5 +14,7 @@ cmake -DCMAKE_INSTALL_PREFIX=$PREFIX \
       .
 
 ninja
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
 ctest -V
+fi
 ninja install
