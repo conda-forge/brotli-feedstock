@@ -33,8 +33,8 @@ outputs:
     build:
       run_exports:
         - {{ pin_subpackage('brotli') }}
-      script: install_library.sh  # [unix]
-      script: install_library.bat  # [win]
+    script: install_library.sh  # [unix]
+    script: install_library.bat  # [win]
 
     requirements:
       build:
@@ -71,8 +71,8 @@ outputs:
     build:
       run_exports:
         - {{ pin_subpackage('brotli') }}
-      script: install_python.sh  # [unix]
-      script: install_python.bat  # [unix]
+    script: install_python.sh  # [unix]
+    script: install_python.bat  # [unix]
     requirements:
       build:
         - cmake
