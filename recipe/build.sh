@@ -17,4 +17,4 @@ ninja
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
 ctest -V
 fi
-ninja install
+# ninja install
