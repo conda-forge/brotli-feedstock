@@ -72,7 +72,7 @@ outputs:
       run_exports:
         - {{ pin_subpackage('brotli') }}
     script: install_python.sh  # [unix]
-    script: install_python.bat  # [unix]
+    script: install_python.bat  # [win]
     requirements:
       build:
         - cmake
