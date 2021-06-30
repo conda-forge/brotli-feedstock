@@ -24,7 +24,9 @@ if [%PKG_NAME%] == [libbrotlicommon] (
   if errorlevel 1 exit 1
   del %LIBRARY_PREFIX%\lib\pkgconfig\libbrotlienc.pc
   if errorlevel 1 exit 1
-) else if [%PKG_NAME%] == [libbrotlienc] (
+)
+
+if [%PKG_NAME%] == [libbrotlienc] (
   del %LIBRARY_PREFIX%\bin\brotli.exe
   if errorlevel 1 exit 1
   del %LIBRARY_PREFIX%\lib\brotlidec.lib
@@ -33,7 +35,9 @@ if [%PKG_NAME%] == [libbrotlicommon] (
   if errorlevel 1 exit 1
   del %LIBRARY_PREFIX%\lib\pkgconfig\libbrotlidec.pc
   if errorlevel 1 exit 1
-) else if [%PKG_NAME%] == [libbrotlidec] (
+)
+
+if [%PKG_NAME%] == [libbrotlidec] (
   del %LIBRARY_PREFIX%\bin\brotli.exe
   if errorlevel 1 exit 1
   del %LIBRARY_PREFIX%\lib\brotlienc.lib
@@ -45,6 +49,6 @@ if [%PKG_NAME%] == [libbrotlicommon] (
 )
 
 if NOT [%PKG_NAME%] == [brotli] (
-  del %LIBRARY_INC%\brotli
+  rd /s /q %LIBRARY_INC%\brotli
   if errorlevel 1 exit 1
 )

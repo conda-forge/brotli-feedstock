@@ -41,7 +41,6 @@ outputs:
       build:
         - cmake
         - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
         - ninja
     test:
       commands:
@@ -61,7 +60,6 @@ outputs:
       build:
         - cmake
         - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
         - ninja
       host:
         - {{ pin_subpackage("libbrotlicommon", exact=True) }}
@@ -85,7 +83,6 @@ outputs:
       build:
         - cmake
         - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
         - ninja
       host:
         - {{ pin_subpackage("libbrotlicommon", exact=True) }}
@@ -106,7 +103,6 @@ outputs:
       build:
         - cmake
         - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
         - ninja
       host:
         - {{ pin_subpackage("libbrotlienc", exact=True) }}
@@ -129,7 +125,6 @@ outputs:
       build:
         - cmake
         - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
         - ninja
       host:
         - {{ pin_subpackage("libbrotlienc", exact=True) }}
