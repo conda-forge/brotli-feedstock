@@ -96,7 +96,11 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-brotli-green.svg)](https://anaconda.org/conda-forge/brotli) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/brotli.svg)](https://anaconda.org/conda-forge/brotli) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/brotli.svg)](https://anaconda.org/conda-forge/brotli) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/brotli.svg)](https://anaconda.org/conda-forge/brotli) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-brotli--bin-green.svg)](https://anaconda.org/conda-forge/brotli-bin) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/brotli-bin.svg)](https://anaconda.org/conda-forge/brotli-bin) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/brotli-bin.svg)](https://anaconda.org/conda-forge/brotli-bin) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/brotli-bin.svg)](https://anaconda.org/conda-forge/brotli-bin) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-brotli--python-green.svg)](https://anaconda.org/conda-forge/brotli-python) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/brotli-python.svg)](https://anaconda.org/conda-forge/brotli-python) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/brotli-python.svg)](https://anaconda.org/conda-forge/brotli-python) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/brotli-python.svg)](https://anaconda.org/conda-forge/brotli-python) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libbrotlicommon-green.svg)](https://anaconda.org/conda-forge/libbrotlicommon) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libbrotlicommon.svg)](https://anaconda.org/conda-forge/libbrotlicommon) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libbrotlicommon.svg)](https://anaconda.org/conda-forge/libbrotlicommon) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libbrotlicommon.svg)](https://anaconda.org/conda-forge/libbrotlicommon) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libbrotlidec-green.svg)](https://anaconda.org/conda-forge/libbrotlidec) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libbrotlidec.svg)](https://anaconda.org/conda-forge/libbrotlidec) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libbrotlidec.svg)](https://anaconda.org/conda-forge/libbrotlidec) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libbrotlidec.svg)](https://anaconda.org/conda-forge/libbrotlidec) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libbrotlienc-green.svg)](https://anaconda.org/conda-forge/libbrotlienc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libbrotlienc.svg)](https://anaconda.org/conda-forge/libbrotlienc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libbrotlienc.svg)](https://anaconda.org/conda-forge/libbrotlienc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libbrotlienc.svg)](https://anaconda.org/conda-forge/libbrotlienc) |
 
 Installing brotli-split
 =======================
@@ -108,10 +112,10 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `brotli, brotli-python` can be installed with:
+Once the `conda-forge` channel has been enabled, `brotli, brotli-bin, brotli-python, libbrotlicommon, libbrotlidec, libbrotlienc` can be installed with:
 
 ```
-conda install brotli brotli-python
+conda install brotli brotli-bin brotli-python libbrotlicommon libbrotlidec libbrotlienc
 ```
 
 It is possible to list all of the versions of `brotli` available on your platform with:
