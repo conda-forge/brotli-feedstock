@@ -14,7 +14,7 @@ source:
     - 0002-Fix-pkgconfig-rpath.patch
 
 build:
-  number: 7
+  number: 8
   run_exports:
     # https://abi-laboratory.pro/index.php?view=timeline&l=brotli
     # No minor versions to ensure ABI compatibility history
