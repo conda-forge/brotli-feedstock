@@ -14,7 +14,7 @@ source:
     - 0002-Fix-pkgconfig-rpath.patch
 
 build:
-  number: 8
+  number: 9
   run_exports:
     # https://abi-laboratory.pro/index.php?view=timeline&l=brotli
     # No minor versions to ensure ABI compatibility history
@@ -160,8 +160,8 @@ outputs:
 
   - name: brotli-python
     build:
-      run_exports:
-        - {{ pin_subpackage('brotli') }}
+      ignore_run_exports_from:
+        - brotli
     script: install_python.sh  # [unix]
     script: install_python.bat  # [win]
     requirements:
