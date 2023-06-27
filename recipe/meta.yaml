@@ -177,7 +177,9 @@ outputs:
         - pip
         - {{ pin_subpackage('brotli', exact=True) }}
       run:
-        - python 
+        - python
+      run_constrained:
+        - {{ pin_subpackage('libbrotlicommon', exact=True) }}
     test:
       imports:
         - brotli
