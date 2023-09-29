@@ -10,7 +10,7 @@ source:
   sha256: e720a6ca29428b803f4ad165371771f5398faba397edf6778837a18599ea13ff
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # https://abi-laboratory.pro/index.php?view=timeline&l=brotli
     # No minor versions to ensure ABI compatibility history
