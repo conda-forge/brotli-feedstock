@@ -182,6 +182,7 @@ outputs:
       host:
         - python
         - pip
+        - setuptools
         - {{ pin_subpackage('brotli', exact=True) }}
       run:
         - python
