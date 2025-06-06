@@ -194,6 +194,7 @@ outputs:
 
 about:
   home: http://github.com/google/brotli
+  dev_url: http://github.com/google/brotli
   license: MIT
   license_file: LICENSE
   summary: Brotli compression format
