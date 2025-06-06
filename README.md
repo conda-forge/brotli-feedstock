@@ -9,6 +9,8 @@ Package license: MIT
 
 Summary: Brotli compression format
 
+Development: http://github.com/google/brotli
+
 Current build status
 ====================
 
