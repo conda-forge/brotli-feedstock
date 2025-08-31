@@ -205,6 +205,7 @@ Feedstock Maintainers
 =====================
 
 * [@CJ-Wright](https://github.com/CJ-Wright/)
+* [@h-vetinari](https://github.com/h-vetinari/)
 * [@wesm](https://github.com/wesm/)
 * [@xhochy](https://github.com/xhochy/)
 
