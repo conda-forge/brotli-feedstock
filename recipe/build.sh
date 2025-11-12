@@ -11,7 +11,7 @@ fi
 cmake ${CMAKE_ARGS} -DCMAKE_INSTALL_PREFIX=$PREFIX \
       -DCMAKE_C_FLAGS=$BROTLI_CFLAGS \
       -GNinja \
-      ${EXTRA_CMAKE_FLAGS} \
+      ${EXTRA_CMAKE_FLAGS:-} \
       .
 
 ninja
