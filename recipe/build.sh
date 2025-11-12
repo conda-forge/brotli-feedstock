@@ -15,5 +15,6 @@ ninja
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR:-}" != "" ]]; then
   echo "Klaus' debug qemu ld prefix: ${QEMU_LD_PREFIX}"
   ls ${QEMU_LD_PREFIX}
+  export BROTLI_WRAPPER_LD_PREFIX=${QEMU_LD_PREFIX}
   ctest -V
 fi
