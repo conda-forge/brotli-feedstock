@@ -162,6 +162,8 @@ outputs:
 
   - name: brotli-python
     build:
+      # skip during bootstrapping until we have python
+      skip: true  # [riscv64]
       ignore_run_exports_from:
         - brotli
     script: install_python.sh  # [unix]
