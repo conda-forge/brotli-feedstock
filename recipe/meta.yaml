@@ -10,7 +10,6 @@ source:
   sha256: b517ebdb5266b963d28d6e639b973479874ec72086deb6ee4a2d639e1b13606b
   patches:
     - 0001-Add-separate-options-to-disable-shared-static-librar.patch
-    # remove this patch when next release comes out
     - 0002-Fix-pkgconfig-rpath.patch
 
 build:
