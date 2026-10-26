@@ -187,6 +187,8 @@ outputs:
     test:
       imports:
         - brotli
+      commands:
+        - python -c "import brotli; assert brotli.__version__ == '{{ version }}'; data = b'brotli backport test' * 1000; assert brotli.decompress(brotli.compress(data)) == data"
 
 about:
   home: http://github.com/google/brotli
@@ -196,6 +198,7 @@ about:
   summary: Brotli compression format
 
 extra:
+  feedstock-name: brotli
   recipe-maintainers:
     - wesm
     - xhochy
