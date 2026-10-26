@@ -1,4 +1,4 @@
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: brotli-split
@@ -7,10 +7,10 @@ package:
 source:
   fn: brotli-{{ version }}.tar.gz
   url: https://github.com/google/brotli/archive/v{{ version }}.tar.gz
-  sha256: e720a6ca29428b803f4ad165371771f5398faba397edf6778837a18599ea13ff
+  sha256: 1a84dfaa740994d19254bf78aa7d74a4a8040d1638f3d5f2cdecb188fd520da8
 
 build:
-  number: 4
+  number: 0
   run_exports:
     # https://abi-laboratory.pro/index.php?view=timeline&l=brotli
     # No minor versions to ensure ABI compatibility history
