@@ -1,4 +1,4 @@
-{% set version = "1.0.9" %}
+{% set version = "1.0.10" %}
 
 package:
   name: brotli-split
@@ -7,14 +7,13 @@ package:
 source:
   fn: brotli-{{ version }}.tar.gz
   url: https://github.com/google/brotli/archive/v{{ version }}.tar.gz
-  sha256: f9e8d81d0405ba66d181529af42a3354f838c939095ff99930da6aa9cdf6fe46
+  sha256: b517ebdb5266b963d28d6e639b973479874ec72086deb6ee4a2d639e1b13606b
   patches:
     - 0001-Add-separate-options-to-disable-shared-static-librar.patch
-    # remove this patch when next release comes out
     - 0002-Fix-pkgconfig-rpath.patch
 
 build:
-  number: 9
+  number: 0
   run_exports:
     # https://abi-laboratory.pro/index.php?view=timeline&l=brotli
     # No minor versions to ensure ABI compatibility history
@@ -25,6 +24,7 @@ requirements:
   build:
     - cmake
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - ninja
   host:
@@ -41,6 +41,7 @@ outputs:
       build:
         - cmake
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - ninja
     test:
       commands:
@@ -60,6 +61,7 @@ outputs:
       build:
         - cmake
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - ninja
       host:
         - {{ pin_subpackage("libbrotlicommon", exact=True) }}
@@ -83,6 +85,7 @@ outputs:
       build:
         - cmake
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - ninja
       host:
         - {{ pin_subpackage("libbrotlicommon", exact=True) }}
@@ -103,6 +106,7 @@ outputs:
       build:
         - cmake
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - ninja
       host:
         - {{ pin_subpackage("libbrotlienc", exact=True) }}
@@ -125,6 +129,7 @@ outputs:
       build:
         - cmake
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - ninja
       host:
         - {{ pin_subpackage("libbrotlienc", exact=True) }}
@@ -168,6 +173,7 @@ outputs:
       build:
         - cmake
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
@@ -175,6 +181,7 @@ outputs:
       host:
         - python
         - pip
+        - setuptools
         - {{ pin_subpackage('brotli', exact=True) }}
       run:
         - python
@@ -183,14 +190,18 @@ outputs:
     test:
       imports:
         - brotli
+      commands:
+        - python -c "import brotli; assert brotli.__version__ == '{{ version }}'; data = b'brotli backport test' * 1000; assert brotli.decompress(brotli.compress(data)) == data"
 
 about:
   home: http://github.com/google/brotli
+  dev_url: http://github.com/google/brotli
   license: MIT
   license_file: LICENSE
   summary: Brotli compression format
 
 extra:
+  feedstock-name: brotli
   recipe-maintainers:
     - wesm
     - xhochy
